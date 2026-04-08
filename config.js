@@ -1,20 +1,20 @@
 // Love Website Configuration
-// Customize this file to personalize your love website
+// Personalized for Rana (Rony/MyR) from Mahmoud
 
 const CONFIG = {
-    // Partner's name (will be used throughout the website)
-    partnerName: "Your Love's Name",
+    // Partner's name
+    partnerName: "Rana",
     
-    // Your name (optional, for signature)
-    yourName: "Your Name",
+    // Your name
+    yourName: "Mahmoud",
     
     // Custom messages
     messages: {
-        subtitle: "you light up my world in ways words can't express ✨",
-        loveNote: "you are the sunshine in my darkest days and the stars in my night sky. Every moment with you feels like magic, and I fall in love with you more each day. You're not just my girlfriend, you're my best friend, my soulmate, and my everything. I love you beyond words! 💖",
+        subtitle: "You light up my world in ways words can't express ✨",
+        loveNote: "Rony, you are the sunshine in my darkest days and the stars in my night sky. Every moment with you feels like magic, and I fall in love with you more each day. You're not just my partner, you're my best friend, my soulmate, and my everything. I love you beyond words! 💖",
         specialMessage: "You came into my life like a beautiful surprise, and now I can't imagine my world without you. Your smile brightens my darkest days, your laugh is my favorite melody, and your love is the greatest gift I've ever received.",
         specialMessage2: "Thank you for being you, for loving me, and for making every day feel like a celebration. I promise to love you, cherish you, and make you smile every single day of our lives together.",
-        signature: "With all my love, Forever yours 💕"
+        signature: "With all my love, Forever yours, Mahmoud 💕"
     },
     
     // Memory descriptions
@@ -24,7 +24,7 @@ const CONFIG = {
         care: "Your caring nature, sweet voice, and adorable cuteness"
     },
     
-    // Character descriptions
+    // Character / Avatar descriptions
     characters: {
         partner: "My beautiful angel",
         you: "Forever yours"
@@ -32,14 +32,14 @@ const CONFIG = {
     
     // Special messages for different kiss counts
     kissMessages: {
-        10: "10 kisses! You're so sweet! 💕",
+        10: "10 kisses! You're so sweet, MyR! 💕",
         50: "50 kisses! I'm falling deeper in love! 💖",
-        100: "100 kisses! You're my everything! 💘"
+        100: "100 kisses! You're my everything, Rony! 💘"
     },
     
     // Character interaction messages
     characterMessages: {
-        partner: "you're the most beautiful person in the world! 💕",
+        partner: "Rana, you're the most beautiful person in the world! 💕",
         you: "I'm so lucky to have you in my life! 💖"
     },
     
