@@ -3,156 +3,477 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love 💕</title>
+    <title>For My Love 💕 | Mahmoud & Rana</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts for Editorial Luxury -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Config File -->
     <script src="config.js"></script>
     
-    <!-- External Libraries -->
+    <!-- External Animation & Physics Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <!-- Environmental Drift Overlay -->
+    <!-- Environmental Drift Canvas -->
     <canvas id="driftCanvas" class="drift-canvas"></canvas>
+
+    <!-- Interactive Heart Burst Canvas -->
+    <canvas id="heartCanvas" class="heart-canvas"></canvas>
+
+    <!-- Canvas Surprise Effect -->
+    <canvas id="surpriseCanvas" class="surprise-canvas"></canvas>
 
     <!-- Film Grain Overlay -->
     <div class="film-grain"></div>
 
-    <!-- Custom Cursor -->
+    <!-- Custom Luxury Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
     <!-- Toast Notifications Container -->
     <div id="toastContainer" class="toast-container"></div>
 
-    <!-- Native Audio Element Fallback -->
-    <audio id="bgmAudio" src="assets/audio/bgm.mp3" loop></audio>
-
-    <!-- Canvas Surprise Effect (Subtle) -->
-    <canvas id="surpriseCanvas" class="surprise-canvas"></canvas>
+    <!-- Native Audio Element -->
+    <audio id="bgmAudio" src="assets/audio/bgm.mp3" loop preload="auto"></audio>
 
     <!-- Cinematic Preloader -->
     <div class="preloader">
+        <div class="preloader-bg-glow"></div>
+        <div class="preloader-crest">
+            <span class="crest-monogram">M ♡ R</span>
+        </div>
         <div class="preloader-text" id="preloaderName">Rana</div>
-        <div class="preloader-counter" id="preloaderCounter">0%</div>
-        <button id="enterBtn" class="magnetic-btn hover-trigger">Press to Experience</button>
+        <div class="preloader-subtext">A timeless experience curated with love</div>
+        <div class="preloader-progress-wrap">
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill" id="preloaderFill"></div>
+            </div>
+            <div class="preloader-counter" id="preloaderCounter">0%</div>
+        </div>
+        <button id="enterBtn" class="magnetic-btn hover-trigger">Press to Experience ✨</button>
     </div>
 
-    <!-- Ambient WebGL-style Background -->
+    <!-- Ambient Luxury Background Glows -->
     <div class="ambient-glow"></div>
     <div class="ambient-glow-2"></div>
+    <div class="ambient-glow-3"></div>
 
-    <!-- Audio Toggle (Top Right) -->
-    <div class="audio-toggle hover-trigger" id="audioToggle">🔊</div>
+    <!-- Floating Deluxe Audio Player Widget -->
+    <div class="audio-player-pill hover-trigger" id="audioPlayerWidget">
+        <div class="audio-visualizer" id="audioVisualizer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="audio-info">
+            <span class="audio-title" id="audioTrackTitle">Our Eternal Melody</span>
+            <span class="audio-artist" id="audioTrackArtist">Mahmoud & Rana 💕</span>
+        </div>
+        <button class="audio-btn-icon" id="audioToggle" aria-label="Toggle Audio">🔊</button>
+        <div class="audio-volume-hover">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.2" class="volume-slider" aria-label="Volume">
+        </div>
+    </div>
+
+    <!-- Floating Quick Navigation Dock -->
+    <nav class="floating-dock" id="floatingNav">
+        <a href="#heroSection" class="dock-item hover-trigger active" data-tooltip="Home">✦</a>
+        <a href="#timeSection" class="dock-item hover-trigger" data-tooltip="Our Time">⏳</a>
+        <a href="#soulsSection" class="dock-item hover-trigger" data-tooltip="Two Souls">💕</a>
+        <a href="#envelopeSection" class="dock-item hover-trigger" data-tooltip="Love Letter">💌</a>
+        <a href="#timelineSection" class="dock-item hover-trigger" data-tooltip="Journey">📖</a>
+        <a href="#reasonsSection" class="dock-item hover-trigger" data-tooltip="Reasons">🃏</a>
+        <a href="#openWhenSection" class="dock-item hover-trigger" data-tooltip="Open When">📬</a>
+        <a href="#memoryGallery" class="dock-item hover-trigger" data-tooltip="Memories">🖼️</a>
+        <a href="#gameSection" class="dock-item hover-trigger" data-tooltip="Kisses">💋</a>
+        <a href="#certSection" class="dock-item hover-trigger" data-tooltip="Promise">📜</a>
+    </nav>
 
     <div class="container" id="mainWrapper">
-        <!-- Hero Section (Reverted to Arched Layout) -->
-        <header class="header">
-            <!-- Center Text, Image, Subtext -->
+        <!-- 1. Hero Section -->
+        <header class="header" id="heroSection">
+            <div class="hero-badge">
+                <span class="badge-star">✦</span>
+                <span class="badge-text" id="heroBadgeText">MAHMOUD & RANA • ETERNAL DEVOTION</span>
+                <span class="badge-star">✦</span>
+            </div>
+
             <h1 class="main-title">FOR MY <span id="morphText">LOVE</span></h1>
             
             <div class="hero-arch hover-trigger">
                 <img src="assets/images/photo1.jpg" alt="Our moment" class="hero-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzEuanBnPC90ZXh0Pjwvc3ZnPg=='">
                 <div class="glare"></div>
+                <div class="arch-foil-trim"></div>
             </div>
 
             <p class="subtitle split-text" id="subtitle">You light up my world in ways words can't express ✨</p>
+            
+            <div class="scroll-cue">
+                <span class="scroll-text">Begin Our Story</span>
+                <div class="scroll-arrow">↓</div>
+            </div>
         </header>
 
-        <!-- Characters Section -->
-        <section class="characters-section">
+        <!-- 2. NEW: "Time Spent Loving You" Live Heartbeat Clock -->
+        <section class="time-section" id="timeSection">
+            <div class="section-badge">SINCE THE MOMENT WE BEGAN</div>
+            <h2 class="section-title split-title">Time Spent Loving You ⏳</h2>
+            <p class="section-subtitle">Every second with you is a moment etched into eternity</p>
+
+            <div class="time-grid">
+                <div class="time-card glass-panel hover-trigger">
+                    <span class="time-val" id="timeDays">000</span>
+                    <span class="time-label">DAYS</span>
+                    <div class="time-glow"></div>
+                </div>
+                <div class="time-card glass-panel hover-trigger">
+                    <span class="time-val" id="timeHours">00</span>
+                    <span class="time-label">HOURS</span>
+                    <div class="time-glow"></div>
+                </div>
+                <div class="time-card glass-panel hover-trigger">
+                    <span class="time-val" id="timeMinutes">00</span>
+                    <span class="time-label">MINUTES</span>
+                    <div class="time-glow"></div>
+                </div>
+                <div class="time-card glass-panel hover-trigger">
+                    <span class="time-val" id="timeSeconds">00</span>
+                    <span class="time-label">SECONDS</span>
+                    <div class="time-glow"></div>
+                </div>
+            </div>
+
+            <div class="heartbeat-container">
+                <span class="heartbeat-pulse" id="heartbeatPulse">💓</span>
+                <span class="heartbeat-text" id="heartbeatTotalText">Over 0 days of endless smiles, laughs, and pure love</span>
+            </div>
+        </section>
+
+        <!-- 3. Characters Section: The Two Souls -->
+        <section class="characters-section" id="soulsSection">
+            <div class="section-badge">TWO SOULS • ONE DESTINY</div>
+            <h2 class="section-title split-title">The Two of Us 💫</h2>
+            
             <div class="character-container">
                 <!-- Partner -->
-                <div class="character">
-                    <div class="magical-artifact editorial-portrait hover-trigger">
+                <div class="character hover-trigger" id="partnerCard">
+                    <div class="magical-artifact editorial-portrait">
                         <img src="assets/images/photo2.jpg" alt="Partner Avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzIuanBnPC90ZXh0Pjwvc3ZnPg=='">
                         <div class="glare"></div>
+                        <div class="card-crown">👑</div>
                     </div>
                     <h3 class="split-text" id="partnerName">Rana</h3>
-                    <p class="split-text" id="partnerDescription">My beautiful angel</p>
+                    <p class="split-text character-desc" id="partnerDescription">My beautiful angel</p>
+                    <div class="character-interactive-tag">Click for a sweet whisper 💕</div>
                 </div>
                 
-                <div class="love-heart display-heart">💕</div>
+                <div class="constellation-connector">
+                    <div class="connector-line"></div>
+                    <div class="love-heart display-heart hover-trigger" id="centerHeart">💕</div>
+                    <div class="connector-line"></div>
+                </div>
 
                 <!-- You -->
-                <div class="character">
-                    <div class="magical-artifact editorial-portrait hover-trigger">
+                <div class="character hover-trigger" id="yourCard">
+                    <div class="magical-artifact editorial-portrait">
                         <img src="assets/images/photo3.jpg" alt="Your Avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzMuanBnPC90ZXh0Pjwvc3ZnPg=='">
                         <div class="glare"></div>
+                        <div class="card-crown">🛡️</div>
                     </div>
                     <h3 class="split-text" id="yourName">Mahmoud</h3>
-                    <p class="split-text" id="yourDescription">Forever yours</p>
+                    <p class="split-text character-desc" id="yourDescription">Forever yours</p>
+                    <div class="character-interactive-tag">Click for a sweet whisper 💖</div>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Surprise -->
-        <section class="interaction-section">
-            <button id="loveButton" class="magnetic-btn hover-trigger">Click for a surprise 💝</button>
-            <div id="loveNote" class="love-note glass-panel">
-                <p id="loveNoteText" class="split-text">Loading our love note...</p>
+        <!-- 4. Interactive 3D Wax Seal Envelope & Surprise Love Letter -->
+        <section class="envelope-section" id="envelopeSection">
+            <div class="section-badge">SEALED WITH ETERNAL DEVOTION</div>
+            <h2 class="section-title split-title">A Secret Letter For You 💌</h2>
+            <p class="section-subtitle">Break the golden wax seal to unfold what's inside my heart</p>
+
+            <div class="wax-envelope-wrapper">
+                <div class="wax-envelope hover-trigger" id="waxEnvelope">
+                    <div class="envelope-back"></div>
+                    <div class="envelope-flap" id="envelopeFlap">
+                        <div class="wax-seal hover-trigger" id="waxSeal">
+                            <span class="seal-initials">M ♡ R</span>
+                            <div class="seal-glow"></div>
+                        </div>
+                    </div>
+                    <div class="envelope-front">
+                        <span class="envelope-to">For: Rana (My Dearest Rony)</span>
+                        <span class="envelope-stamp">POSTAGE PAID • ETERNITY</span>
+                    </div>
+
+                    <!-- Unfolding Parchment Letter Inside -->
+                    <div class="letter-parchment" id="unfoldedLetter">
+                        <div class="letter-header">
+                            <span class="letter-crest">✦ ⚜️ ✦</span>
+                            <h3 class="letter-title">My Sweetest Rony,</h3>
+                        </div>
+                        <div class="letter-content">
+                            <p id="loveNoteText" class="letter-body-text">
+                                Rony, you are the sunshine in my darkest days and the stars in my night sky. Every moment with you feels like magic, and I fall in love with you more each day. You're not just my partner, you're my best friend, my soulmate, and my everything. I love you beyond words! 💖
+                            </p>
+                        </div>
+                        <div class="letter-footer">
+                            <span class="letter-sig">Forever & unconditionally yours,</span>
+                            <span class="letter-sig-name">Mahmoud 💕</span>
+                        </div>
+                        <button class="close-letter-btn hover-trigger" id="closeLetterBtn">Fold Letter Back ✉️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fallback interactive button for accessibility & immediate trigger -->
+            <div class="envelope-action-bar">
+                <button id="loveButton" class="magnetic-btn hover-trigger">Open My Love Letter 💝</button>
             </div>
         </section>
 
-        <!-- Dynamic Memory Gallery -->
+        <!-- 5. NEW: "Our Love Journey" Interactive Celestial Timeline -->
+        <section class="timeline-section" id="timelineSection">
+            <div class="section-badge">CHAPTERS OF OUR HEARTS</div>
+            <h2 class="section-title split-title">Our Love Journey 📖</h2>
+            <p class="section-subtitle">Every chapter with you is my favorite story</p>
+
+            <div class="timeline-container" id="timelineContainer">
+                <!-- Dynamically populated from CONFIG.timeline -->
+            </div>
+        </section>
+
+        <!-- 6. NEW: "Reasons Why I Love You" Interactive 3D Card Deck -->
+        <section class="reasons-section" id="reasonsSection">
+            <div class="section-badge">INFINITE REASONS TO ADORE YOU</div>
+            <h2 class="section-title split-title">Why I Love You 🃏✨</h2>
+            <p class="section-subtitle">A deck of whispered truths from my heart to yours</p>
+
+            <div class="reasons-deck-wrapper">
+                <div class="reasons-deck" id="reasonsDeck">
+                    <!-- Dynamic active reason card -->
+                    <div class="reason-card glass-panel hover-trigger" id="activeReasonCard">
+                        <div class="reason-card-shine"></div>
+                        <div class="reason-badge">
+                            <span class="reason-icon" id="reasonIcon">🌸</span>
+                            <span class="reason-number" id="reasonNumber">REASON #1</span>
+                        </div>
+                        <h3 class="reason-title" id="reasonTitle">Your Sweet Laugh</h3>
+                        <p class="reason-text" id="reasonText">The way you laugh makes my darkest day immediately brighten. It is my favorite melody in the entire universe.</p>
+                        <div class="reason-footer">
+                            <span class="reason-tag">Always in my heart</span>
+                            <span class="reason-watermark">M ♡ R</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reasons-controls">
+                    <button class="magnetic-btn hover-trigger" id="prevReasonBtn">← Previous</button>
+                    <div class="reasons-counter-badge" id="reasonsCounterBadge">1 / 12</div>
+                    <button class="magnetic-btn hover-trigger" id="nextReasonBtn">Next Reason →</button>
+                    <button class="magnetic-btn hover-trigger btn-secondary" id="randomReasonBtn">Shuffle ✨</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. NEW: "Open When..." Secret Envelopes -->
+        <section class="open-when-section" id="openWhenSection">
+            <div class="section-badge">LETTERS FOR EVERY EMOTION</div>
+            <h2 class="section-title split-title">Open When... 📬</h2>
+            <p class="section-subtitle">Little safe harbors whenever you need my voice</p>
+
+            <div class="open-when-grid" id="openWhenGrid">
+                <!-- Dynamically generated from CONFIG.openWhen -->
+            </div>
+        </section>
+
+        <!-- 8. Dynamic Memory Gallery with Lightbox -->
         <section class="memory-gallery" id="memoryGallery">
-            <h2 class="split-text">Our Beautiful Memories 💫</h2>
-            <div class="memories-grid">
+            <div class="section-badge">PRECIOUS MOMENTS IN TIME</div>
+            <h2 class="section-title split-title">Our Beautiful Memories 💫</h2>
+            <p class="section-subtitle">Click on any memory to view it in full polaroid detail</p>
+
+            <div class="memories-grid" id="memoriesGrid">
                 <!-- Card 1 -->
-                <div class="magical-artifact editorial-memory-card hover-trigger">
+                <div class="magical-artifact editorial-memory-card hover-trigger" data-gallery-index="0">
                     <img src="assets/images/photo4.jpg" alt="Memory" class="memory-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzQuanBnPC90ZXh0Pjwvc3ZnPg=='">
                     <div class="glare"></div>
                     <div class="memory-overlay">
                         <div class="memory-icon">🌙</div>
                         <h3>Late Night Talks</h3>
                         <p id="memoryLateNight">Those endless conversations...</p>
+                        <span class="memory-expand-hint">Click to enlarge 🔍</span>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="magical-artifact editorial-memory-card offset-card hover-trigger">
+                <div class="magical-artifact editorial-memory-card offset-card hover-trigger" data-gallery-index="1">
                     <img src="assets/images/photo5.jpg" alt="Memory" class="memory-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzUuanBnPC90ZXh0Pjwvc3ZnPg=='">
                     <div class="glare"></div>
                     <div class="memory-overlay">
                         <div class="memory-icon">💫</div>
                         <h3>The Day We'll Meet</h3>
                         <p id="memoryFirstMeeting">I know the day we meet will be magical...</p>
+                        <span class="memory-expand-hint">Click to enlarge 🔍</span>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="magical-artifact editorial-memory-card hover-trigger">
+                <div class="magical-artifact editorial-memory-card hover-trigger" data-gallery-index="2">
                     <img src="assets/images/photo1.jpg" alt="Memory" class="memory-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzEuanBnPC90ZXh0Pjwvc3ZnPg=='">
                     <div class="glare"></div>
                     <div class="memory-overlay">
                         <div class="memory-icon">💕</div>
                         <h3>Your Care & Voice</h3>
                         <p id="memoryCare">Your caring nature melts my heart...</p>
+                        <span class="memory-expand-hint">Click to enlarge 🔍</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Kiss Counter Game -->
-        <section class="game-section">
-            <h2 class="split-text">Virtual Kisses 💋</h2>
+        <!-- 9. Kiss Counter Game with Particle Cannon -->
+        <section class="game-section" id="gameSection">
+            <div class="section-badge">INTERACTIVE SWEETNESS</div>
+            <h2 class="section-title split-title">Virtual Kisses 💋</h2>
+            <p class="section-subtitle">Send sweet kisses across the distance — reach milestones to unlock surprises!</p>
+            
             <div class="kiss-counter">
-                <span id="kissCount">0</span>
-                <button id="kissButton" class="magnetic-btn hover-trigger">Send a Kiss 💋</button>
+                <div class="kiss-badge-ring">
+                    <span id="kissCount">0</span>
+                    <span class="kiss-unit">KISSES SENT</span>
+                </div>
+                <div class="kiss-buttons-wrap">
+                    <button id="kissButton" class="magnetic-btn hover-trigger kiss-cta">Send a Kiss 💋</button>
+                    <button id="kissBlowButton" class="magnetic-btn hover-trigger btn-secondary">Blow a Shower of Kisses 💨💕</button>
+                </div>
+                <div class="kiss-milestone-bar">
+                    <div class="kiss-milestone-fill" id="kissMilestoneFill"></div>
+                </div>
+                <span class="kiss-next-milestone" id="kissNextMilestone">Next surprise at 10 kisses ✨</span>
             </div>
         </section>
 
-        <!-- Final Note -->
+        <!-- 10. NEW: Certificate of Eternal Love with Interactive Wax Stamp -->
+        <section class="cert-section" id="certSection">
+            <div class="section-badge">SIGNED & SEALED FOR ETERNITY</div>
+            <h2 class="section-title split-title">Our Eternal Covenant 📜</h2>
+            <p class="section-subtitle">A permanent pledge witnessed by the stars</p>
+
+            <div class="certificate-frame glass-panel hover-trigger" id="certificateFrame">
+                <div class="cert-border-gold"></div>
+                <div class="cert-header">
+                    <span class="cert-monogram">✦ ⚜️ ✦</span>
+                    <h3 class="cert-title" id="certTitle">Certificate of Eternal Love</h3>
+                    <span class="cert-subtitle" id="certSubtitle">Inscribed in the Stars & Sealed by the Heart</span>
+                </div>
+
+                <div class="cert-body">
+                    <p class="cert-statement" id="certStatement">
+                        This document certifies that Mahmoud and Rana (Rony) are bound by unconditional love, endless laughter, infinite virtual kisses, and a promise to cherish each other through every chapter of this lifetime and beyond.
+                    </p>
+                </div>
+
+                <div class="cert-meta-grid">
+                    <div class="cert-meta-item">
+                        <span class="meta-label">PARTNER ONE</span>
+                        <span class="meta-val">Mahmoud</span>
+                        <div class="meta-sign">Mahmoud</div>
+                    </div>
+                    <div class="cert-meta-center">
+                        <!-- Hold to Stamp Button -->
+                        <div class="stamp-interactive-wrap" id="stampWrap">
+                            <button class="stamp-btn hover-trigger" id="stampBtn" aria-label="Stamp our eternal love">
+                                <svg class="stamp-progress-ring" width="90" height="90">
+                                    <circle class="ring-bg" cx="45" cy="45" r="40"></circle>
+                                    <circle class="ring-fill" id="stampRingFill" cx="45" cy="45" r="40"></circle>
+                                </svg>
+                                <span class="stamp-icon" id="stampIcon">💮</span>
+                                <span class="stamp-label" id="stampLabel">Hold to Seal</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cert-meta-item">
+                        <span class="meta-label">PARTNER TWO</span>
+                        <span class="meta-val">Rana (Rony)</span>
+                        <div class="meta-sign">Rana</div>
+                    </div>
+                </div>
+
+                <div class="cert-footer">
+                    <span class="cert-date" id="certDate">Certified for Eternity</span>
+                    <span class="cert-witness">Witnessed by: The Universe & Stars 🌌</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Final Note: Masterpiece Finale -->
         <section class="special-message" id="specialMessage">
             <div class="message-container glass-panel">
+                <div class="finale-crest">✦ ∞ ✦</div>
                 <h2 id="specialMessageTitle" class="split-title">To My Dearest Rony</h2>
                 <div class="message-body">
                     <p id="specialMessage1" class="split-text">Loading message...</p>
                     <p id="specialMessage2" class="split-text">Loading message...</p>
                 </div>
                 <div class="signature split-text" id="signature">With all my love, Forever yours 💕</div>
+                
+                <div class="finale-cta-wrap">
+                    <button class="magnetic-btn hover-trigger" id="backToTopBtn">Return to the Beginning ✦</button>
+                </div>
             </div>
         </section>
+    </div>
+
+    <!-- Interactive Lightbox Modal for Gallery Photos -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Memory Photo">
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-card">
+            <button class="lightbox-close hover-trigger" id="lightboxClose" aria-label="Close Lightbox">✕</button>
+            <div class="polaroid-wrapper">
+                <div class="polaroid-pin">📍</div>
+                <div class="polaroid-photo">
+                    <img src="" alt="Enlarged Memory" id="lightboxImg">
+                </div>
+                <div class="polaroid-caption">
+                    <h4 id="lightboxTitle">Late Night Talks</h4>
+                    <span class="polaroid-date" id="lightboxDate">Endless Whispers</span>
+                    <p id="lightboxCaption">Those endless conversations that made us forget about time...</p>
+                </div>
+            </div>
+            <div class="lightbox-nav">
+                <button class="lightbox-arrow hover-trigger" id="lightboxPrev" aria-label="Previous Photo">←</button>
+                <span class="lightbox-count" id="lightboxCount">1 / 5</span>
+                <button class="lightbox-arrow hover-trigger" id="lightboxNext" aria-label="Next Photo">→</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- "Open When..." Letter Modal -->
+    <div class="open-when-modal" id="openWhenModal" role="dialog" aria-modal="true" aria-label="Open When Letter">
+        <div class="open-when-backdrop" id="openWhenBackdrop"></div>
+        <div class="open-when-dialog glass-panel">
+            <button class="open-when-close hover-trigger" id="openWhenClose" aria-label="Close Letter">✕</button>
+            <div class="open-when-crest" id="modalEmoji">💌</div>
+            <span class="open-when-tag" id="modalTag">Open When...</span>
+            <h3 class="open-when-modal-title" id="modalTitle">You Miss Me</h3>
+            <div class="open-when-parchment">
+                <p class="open-when-modal-text" id="modalLetterText">Loading letter...</p>
+            </div>
+            <div class="open-when-modal-footer">
+                <span class="modal-sig">Always with you in spirit,</span>
+                <span class="modal-name">Mahmoud 💖</span>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
