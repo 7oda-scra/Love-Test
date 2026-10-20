@@ -11,8 +11,8 @@ const CONFIG = {
     yourName: "Mahmoud",
     
     // Relationship start date (for the live "Time Loving You" clock)
-    // Format: YYYY-MM-DD or ISO string
-    startDate: "2023-11-01T00:00:00",
+    // Starting from January 23, 2026 (23/1/2026) (~9 months)
+    startDate: "2026-01-23T00:00:00",
     
     // Music Information
     music: {
@@ -49,36 +49,46 @@ const CONFIG = {
             date: "The First Hello",
             tag: "Chapter I",
             title: "When Two Worlds Aligned",
-            description: "A simple hello that unknowingly set into motion the greatest love story of my life. The universe knew before we even did.",
-            icon: "✨"
+            description: "A simple hello that unknowingly set into motion the greatest love story of my life. Like a bouquet of fresh white roses, you brought pure light into my world.",
+            icon: "✨",
+            image: "assets/images/rana-roses.jpg",
+            imageCaption: "White roses blooming like my love for you"
         },
         {
             date: "Late Night Talks",
             tag: "Chapter II",
             title: "Hours That Felt Like Minutes",
-            description: "Talking with you until 3 AM, laughing at silly things, sharing our dreams, and realizing I never wanted the night to end.",
-            icon: "🌙"
+            description: "Talking past 1 AM, laughing at silly things, sharing our secrets, and realizing that no matter how late it got, I never wanted to hang up.",
+            icon: "🌙",
+            image: "assets/images/rana-late-night.jpg",
+            imageCaption: "1:17 AM whispers and sweetest smiles"
         },
         {
             date: "The Moment I Knew",
             tag: "Chapter III",
             title: "My Heart Chose You",
-            description: "It wasn't a sudden storm; it was the quiet realization that every thought, every song, and every tomorrow belongs with you, Rony.",
-            icon: "💖"
+            description: "It wasn't a sudden storm; it was the quiet realization that every thought, every dream, and every tomorrow belongs with you, Rony.",
+            icon: "💖",
+            image: "assets/images/couple-mirror-adoration.jpg",
+            imageCaption: "The way I look at you says everything"
         },
         {
-            date: "Our Dream Ahead",
+            date: "Under The Night Sky",
             tag: "Chapter IV",
-            title: "The Magical Meeting",
-            description: "The countdown to holding you tight, looking into your eyes, and realizing home was never a place—it was always you.",
-            icon: "💫"
+            title: "Reflections Under the Stars",
+            description: "Wrapping my arms around you in the quiet evening, feeling your head rest softly against my chest. In that sacred moment, I found my eternal home.",
+            icon: "💫",
+            image: "assets/images/couple-street-mirror.jpg",
+            imageCaption: "Our hearts beating as one under the stars"
         },
         {
             date: "Forever & Always",
             tag: "Infinity",
             title: "To Every Tomorrow",
-            description: "Growing together, conquering every mountain, laughing through every storm, and loving you deeper with every passing breath.",
-            icon: "♾️"
+            description: "Standing tall together through every season, conquering every storm, and loving you deeper with every passing breath for all of eternity.",
+            icon: "♾️",
+            image: "assets/images/couple-night-water.jpg",
+            imageCaption: "Hand in hand, into forever"
         }
     ],
 
@@ -165,6 +175,7 @@ const CONFIG = {
             emoji: "💌",
             preview: "Open When...",
             title: "You Miss Me",
+            photo: "assets/images/couple-street-mirror.jpg",
             letter: "My sweet Rony,\n\nClose your eyes for a moment. Take a deep breath and place your hand on your heart. Can you feel that steady beat? That is me thinking of you right now. Distance may keep us apart physically for now, but my heart is permanently with you. I am counting down every second until I can hold your hand, hug you tight, and never let go. You are always on my mind, my angel."
         },
         {
@@ -172,13 +183,15 @@ const CONFIG = {
             emoji: "🌙",
             preview: "Open When...",
             title: "You Can't Sleep",
-            letter: "Dearest Rana,\n\nLook up at the moon tonight. It's the exact same moon looking down on both of us. Imagine my arms wrapped softly around you, pulling you close, whispering that everything is alright. Let go of all the worries of today. Dream of our happiest memories and the magical day we will meet. Sleep peacefully, my love. I will meet you in our dreams."
+            photo: "assets/images/rana-late-night.jpg",
+            letter: "Dearest Rana,\n\nLook up at the moon tonight. It's the exact same moon looking down on both of us. Imagine my arms wrapped softly around you, pulling you close, whispering that everything is alright. Let go of all the worries of today. Dream of our happiest memories and our beautiful future. Sleep peacefully, my love. I will meet you in our dreams."
         },
         {
             id: "stressed",
             emoji: "🌧️",
             preview: "Open When...",
             title: "You Feel Stressed or Sad",
+            photo: "assets/images/rana-roses.jpg",
             letter: "My precious MyR,\n\nTake a slow, deep breath. Whatever is weighing heavy on your shoulders right now, remember that you are never alone. I am here with you through every storm. You are stronger, braver, and more capable than you know. Don't be too hard on yourself. Sip some warm tea, wrap yourself in a soft blanket, and know that your Mahmoud loves you unconditionally."
         },
         {
@@ -186,46 +199,133 @@ const CONFIG = {
             emoji: "💫",
             preview: "Open When...",
             title: "You Need A Reminder of My Love",
+            photo: "assets/images/couple-mirror-adoration.jpg",
             letter: "To my favorite person in the world,\n\nIf ever the world makes you feel small or you wonder how much you mean to someone: listen to me carefully. You are the most important person in my life. Out of 8 billion people on this planet, my heart chose you without a single hesitation. You are cherished, you are adored, and my love for you will only grow stronger with each passing day. Forever yours."
         }
     ],
 
-    // Extended Memories Gallery for the Lightbox
+    // Extended Memories Gallery for the Lightbox & Interactive Polaroid Wall
     gallery: [
         {
-            src: "assets/images/photo1.jpg",
-            title: "Our Golden Horizon",
-            date: "Eternal Memory",
-            caption: "Every glance reminds me why I fell so deeply in love with your radiant soul.",
-            icon: "✨"
+            id: 1,
+            src: "assets/images/couple-night-water.jpg",
+            title: "By the Still Waters",
+            category: "together",
+            categoryLabel: "Us Together 💕",
+            date: "Magical Evening",
+            caption: "Standing beside you, looking out over the water. Wrapped in your love, every step with you feels like walking through a dream I never want to wake from.",
+            icon: "✨",
+            featured: true
         },
         {
-            src: "assets/images/photo2.jpg",
-            title: "Rana — My Angel",
-            date: "My Favorite View",
-            caption: "The gentle warmth and angelic beauty that effortlessly captivates my heart.",
-            icon: "🌸"
+            id: 2,
+            src: "assets/images/couple-street-mirror.jpg",
+            title: "Reflections Under the Stars",
+            category: "together",
+            categoryLabel: "Us Together 💕",
+            date: "Our Quiet Haven",
+            caption: "Resting your head against my chest under the evening sky. In that moment, the entire world melted away, and all that existed was the beat of our hearts.",
+            icon: "🌌",
+            featured: true
         },
         {
-            src: "assets/images/photo3.jpg",
-            title: "Mahmoud — Forever Yours",
-            date: "Always Beside You",
-            caption: "A heart completely and unreservedly devoted to protecting and cherishing you.",
-            icon: "💖"
+            id: 3,
+            src: "assets/images/rana-portrait.jpg",
+            title: "Royal Radiance in Rose",
+            category: "rana",
+            categoryLabel: "My Queen Rana 👑",
+            date: "My Angel Rony",
+            caption: "Effortlessly enchanting, glowing in silk, with that captivating smile that completely steals my breath away every single time.",
+            icon: "👑",
+            featured: true
         },
         {
-            src: "assets/images/photo4.jpg",
-            title: "Late Night Talks",
-            date: "Endless Whispers",
-            caption: "Hours that felt like mere seconds, talking under the moon and sharing every secret.",
-            icon: "🌙"
+            id: 4,
+            src: "assets/images/rana-roses.jpg",
+            title: "White Roses for My Queen",
+            category: "rana",
+            categoryLabel: "My Queen Rana 👑",
+            date: "Pure Romance",
+            caption: "Even a thousand pure white roses could never rival the warmth, elegance, and celestial sweetness of your radiant smile.",
+            icon: "🌹",
+            featured: true
         },
         {
-            src: "assets/images/photo5.jpg",
-            title: "The Day We Meet",
-            date: "Our Destined Day",
-            caption: "A magical future inscribed in the stars, waiting for us to embrace.",
-            icon: "💫"
+            id: 5,
+            src: "assets/images/couple-mirror-adoration.jpg",
+            title: "The Look of Pure Devotion",
+            category: "together",
+            categoryLabel: "Us Together 💕",
+            date: "Our Favorite Day",
+            caption: "The way I look at you says everything words never could. You are my greatest joy, my sweetest blessing, and my forever girl.",
+            icon: "💖",
+            featured: true
+        },
+        {
+            id: 6,
+            src: "assets/images/rana-late-night.jpg",
+            title: "1:17 AM Sweet Whispers",
+            category: "rana",
+            categoryLabel: "My Queen Rana 👑",
+            date: "1:17 AM • Late Nights",
+            caption: "When the clock strikes past 1 AM and the entire world is fast asleep, your voice and your smile are the only peace my heart ever seeks.",
+            icon: "🌙",
+            featured: true
+        },
+        {
+            id: 7,
+            src: "assets/images/mahmoud-portrait.jpg",
+            title: "The Boy Who Fell For You",
+            category: "mahmoud",
+            categoryLabel: "Mahmoud 🛡️",
+            date: "Forever Yours",
+            caption: "A man whose greatest purpose, deepest devotion, and happiest moments will always begin and end with you, Rana.",
+            icon: "🛡️",
+            featured: false
+        },
+        {
+            id: 8,
+            src: "assets/images/rana-sunshine.jpg",
+            title: "Sunshine & Soft Curls",
+            category: "rana",
+            categoryLabel: "My Queen Rana 👑",
+            date: "Gentle Morning Warmth",
+            caption: "Your natural glow, soft curls, and that gentle smile that warms my entire heart from miles away.",
+            icon: "☀️",
+            featured: false
+        },
+        {
+            id: 9,
+            src: "assets/images/rana-adventurer.jpg",
+            title: "My Playful Adventurer",
+            category: "rana",
+            categoryLabel: "My Queen Rana 👑",
+            date: "Silly & Adorable",
+            caption: "That cute bashful smile and playful spirit that makes me laugh out loud and fall in love with you all over again.",
+            icon: "🎀",
+            featured: false
+        },
+        {
+            id: 10,
+            src: "assets/images/rana-silk-glance.jpg",
+            title: "Silk & Sweet Serenade",
+            category: "rana",
+            categoryLabel: "My Queen Rana 👑",
+            date: "Graceful Heart",
+            caption: "Every quiet gesture of yours radiates beauty, elegance, and a gentleness that soothes my entire soul.",
+            icon: "🌸",
+            featured: false
+        },
+        {
+            id: 11,
+            src: "assets/images/rana-overalls.jpg",
+            title: "Enchanting Gaze",
+            category: "rana",
+            categoryLabel: "My Queen Rana 👑",
+            date: "Treasured Moment",
+            caption: "Looking up with those enchanting eyes that completely captured my soul from the very beginning.",
+            icon: "💫",
+            featured: false
         }
     ],
 

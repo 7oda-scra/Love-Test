@@ -110,10 +110,23 @@
 
             <h1 class="main-title">FOR MY <span id="morphText">LOVE</span></h1>
             
-            <div class="hero-arch hover-trigger">
-                <img src="assets/images/photo1.jpg" alt="Our moment" class="hero-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzEuanBnPC90ZXh0Pjwvc3ZnPg=='">
+            <div class="hero-arch hover-trigger" id="heroArchContainer">
+                <img src="assets/images/couple-night-water.jpg" alt="Mahmoud & Rana" class="hero-image" id="heroMainImg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzEuanBnPC90ZXh0Pjwvc3ZnPg=='">
                 <div class="glare"></div>
                 <div class="arch-foil-trim"></div>
+                <div class="hero-caption-overlay" id="heroCaptionOverlay">
+                    <span class="hero-caption-pill" id="heroCaptionPill">By the Still Waters 🌙</span>
+                </div>
+            </div>
+
+            <!-- Interactive Hero Photo Switcher: Explore Our Moments -->
+            <div class="hero-switcher-wrap">
+                <div class="hero-switcher-label">Our Cherished Moments:</div>
+                <div class="hero-switcher-bar" id="heroSwitcherBar">
+                    <button class="hero-switcher-btn active hover-trigger" data-src="assets/images/couple-night-water.jpg" data-title="By the Still Waters 🌙" aria-label="By the Still Waters">By the Water 🌙</button>
+                    <button class="hero-switcher-btn hover-trigger" data-src="assets/images/couple-street-mirror.jpg" data-title="Reflections Under the Stars 🌌" aria-label="Under the Stars">Under the Stars 🌌</button>
+                    <button class="hero-switcher-btn hover-trigger" data-src="assets/images/couple-mirror-adoration.jpg" data-title="Adoring You Always 💖" aria-label="Adoring You Always">Adoring You Always 💖</button>
+                </div>
             </div>
 
             <p class="subtitle split-text" id="subtitle">You light up my world in ways words can't express ✨</p>
@@ -167,8 +180,8 @@
             <div class="character-container">
                 <!-- Partner -->
                 <div class="character hover-trigger" id="partnerCard">
-                    <div class="magical-artifact editorial-portrait">
-                        <img src="assets/images/photo2.jpg" alt="Partner Avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzIuanBnPC90ZXh0Pjwvc3ZnPg=='">
+                    <div class="magical-artifact editorial-portrait portrait-frame-rana">
+                        <img src="assets/images/rana-portrait.jpg" alt="Rana - My Angel" class="portrait-img-rana" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzIuanBnPC90ZXh0Pjwvc3ZnPg=='">
                         <div class="glare"></div>
                         <div class="card-crown">👑</div>
                     </div>
@@ -185,8 +198,8 @@
 
                 <!-- You -->
                 <div class="character hover-trigger" id="yourCard">
-                    <div class="magical-artifact editorial-portrait">
-                        <img src="assets/images/photo3.jpg" alt="Your Avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzMuanBnPC90ZXh0Pjwvc3ZnPg=='">
+                    <div class="magical-artifact editorial-portrait portrait-frame-mahmoud">
+                        <img src="assets/images/mahmoud-portrait.jpg" alt="Mahmoud - Forever Yours" class="portrait-img-mahmoud" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzMuanBnPC90ZXh0Pjwvc3ZnPg=='">
                         <div class="glare"></div>
                         <div class="card-crown">🛡️</div>
                     </div>
@@ -302,42 +315,18 @@
         <section class="memory-gallery" id="memoryGallery">
             <div class="section-badge">PRECIOUS MOMENTS IN TIME</div>
             <h2 class="section-title split-title">Our Beautiful Memories 💫</h2>
-            <p class="section-subtitle">Click on any memory to view it in full polaroid detail</p>
+            <p class="section-subtitle">Every photograph holds a piece of eternity. Click on any memory to explore it in full polaroid detail.</p>
+
+            <!-- Interactive Gallery Filter Tabs -->
+            <div class="gallery-filters" id="galleryFilters">
+                <button class="gallery-filter-btn active hover-trigger" data-filter="all">All Memories (11) ✨</button>
+                <button class="gallery-filter-btn hover-trigger" data-filter="together">Us Together 💕</button>
+                <button class="gallery-filter-btn hover-trigger" data-filter="rana">My Queen Rana 👑</button>
+                <button class="gallery-filter-btn hover-trigger" data-filter="mahmoud">Mahmoud 🛡️</button>
+            </div>
 
             <div class="memories-grid" id="memoriesGrid">
-                <!-- Card 1 -->
-                <div class="magical-artifact editorial-memory-card hover-trigger" data-gallery-index="0">
-                    <img src="assets/images/photo4.jpg" alt="Memory" class="memory-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzQuanBnPC90ZXh0Pjwvc3ZnPg=='">
-                    <div class="glare"></div>
-                    <div class="memory-overlay">
-                        <div class="memory-icon">🌙</div>
-                        <h3>Late Night Talks</h3>
-                        <p id="memoryLateNight">Those endless conversations...</p>
-                        <span class="memory-expand-hint">Click to enlarge 🔍</span>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="magical-artifact editorial-memory-card offset-card hover-trigger" data-gallery-index="1">
-                    <img src="assets/images/photo5.jpg" alt="Memory" class="memory-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzUuanBnPC90ZXh0Pjwvc3ZnPg=='">
-                    <div class="glare"></div>
-                    <div class="memory-overlay">
-                        <div class="memory-icon">💫</div>
-                        <h3>The Day We'll Meet</h3>
-                        <p id="memoryFirstMeeting">I know the day we meet will be magical...</p>
-                        <span class="memory-expand-hint">Click to enlarge 🔍</span>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="magical-artifact editorial-memory-card hover-trigger" data-gallery-index="2">
-                    <img src="assets/images/photo1.jpg" alt="Memory" class="memory-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkEyNzI4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNGRkMwQ0IiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waG90bzEuanBnPC90ZXh0Pjwvc3ZnPg=='">
-                    <div class="glare"></div>
-                    <div class="memory-overlay">
-                        <div class="memory-icon">💕</div>
-                        <h3>Your Care & Voice</h3>
-                        <p id="memoryCare">Your caring nature melts my heart...</p>
-                        <span class="memory-expand-hint">Click to enlarge 🔍</span>
-                    </div>
-                </div>
+                <!-- Dynamically populated from CONFIG.gallery -->
             </div>
         </section>
 
@@ -467,6 +456,10 @@
             <span class="open-when-tag" id="modalTag">Open When...</span>
             <h3 class="open-when-modal-title" id="modalTitle">You Miss Me</h3>
             <div class="open-when-parchment">
+                <div class="open-when-photo-stamp" id="openWhenPhotoStamp" style="display: none;">
+                    <img src="" alt="Secret Memory" id="openWhenStampImg">
+                    <span class="stamp-caption" id="openWhenStampCaption">With You in My Heart</span>
+                </div>
                 <p class="open-when-modal-text" id="modalLetterText">Loading letter...</p>
             </div>
             <div class="open-when-modal-footer">

@@ -39,6 +39,49 @@ document.addEventListener('DOMContentLoaded', () => {
         setText('certDate', cfg.certificate.date || "Certified for Eternity");
     }
 
+    // Hero Photo Switcher: Explore Our Moments
+    const heroMainImg = document.getElementById('heroMainImg');
+    const heroCaptionPill = document.getElementById('heroCaptionPill');
+    const heroSwitcherBtns = document.querySelectorAll('.hero-switcher-btn');
+
+    if (heroMainImg && heroSwitcherBtns.length > 0) {
+        heroSwitcherBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('active')) return;
+                playSound(clickSound);
+                heroSwitcherBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const nextSrc = btn.getAttribute('data-src');
+                const nextTitle = btn.getAttribute('data-title');
+
+                if (typeof gsap !== 'undefined') {
+                    gsap.to(heroMainImg, {
+                        opacity: 0,
+                        scale: 1.04,
+                        duration: 0.22,
+                        ease: 'power2.in',
+                        onComplete: () => {
+                            heroMainImg.src = nextSrc;
+                            if (heroCaptionPill && nextTitle) {
+                                heroCaptionPill.textContent = nextTitle;
+                            }
+                            gsap.to(heroMainImg, {
+                                opacity: 1,
+                                scale: 1,
+                                duration: 0.35,
+                                ease: 'power2.out'
+                            });
+                        }
+                    });
+                } else {
+                    heroMainImg.src = nextSrc;
+                    if (heroCaptionPill && nextTitle) heroCaptionPill.textContent = nextTitle;
+                }
+            });
+        });
+    }
+
     // =========================================
     // 2. Audio Architecture
     // =========================================
@@ -280,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // 6. Live "Time Spent Loving You" Heartbeat Clock
     // =========================================
-    const startDate = new Date(cfg.startDate || "2023-11-01T00:00:00");
+    const startDate = new Date(cfg.startDate || "2026-01-23T00:00:00");
     const elDays = document.getElementById('timeDays');
     const elHours = document.getElementById('timeHours');
     const elMinutes = document.getElementById('timeMinutes');
@@ -303,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elSeconds) elSeconds.textContent = String(seconds).padStart(2, '0');
 
         if (elTotalText) {
-            elTotalText.textContent = `Over ${days.toLocaleString()} days of endless smiles, laughs, and pure love ✨`;
+            elTotalText.textContent = `Over ${days.toLocaleString()} days (~9 beautiful months) of endless smiles, laughs, and pure love ✨`;
         }
     }
     updateLoveClock();
@@ -428,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // 9. Celestial Timeline Generation
+    // 9. Celestial Timeline Generation with Photo Previews
     // =========================================
     const timelineContainer = document.getElementById('timelineContainer');
     if (timelineContainer && cfg.timeline) {
@@ -436,6 +479,16 @@ document.addEventListener('DOMContentLoaded', () => {
         cfg.timeline.forEach((item, index) => {
             const el = document.createElement('div');
             el.className = 'timeline-item';
+
+            const photoHtml = item.image ? `
+                <div class="timeline-photo-wrapper hover-trigger" data-timeline-idx="${index}">
+                    <img src="${item.image}" alt="${item.title}" class="timeline-photo-thumb" loading="lazy">
+                    <div class="timeline-photo-badge">
+                        <span>🔍 ${item.imageCaption || 'View Photo'}</span>
+                    </div>
+                </div>
+            ` : '';
+
             el.innerHTML = `
                 <div class="timeline-marker hover-trigger">${item.icon || '✦'}</div>
                 <div class="timeline-card glass-panel hover-trigger">
@@ -445,8 +498,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <h3 class="timeline-title">${item.title}</h3>
                     <p class="timeline-desc">${item.description}</p>
+                    ${photoHtml}
                 </div>
             `;
+
+            // If card has a photo, clicking it opens the lightbox
+            const photoWrap = el.querySelector('.timeline-photo-wrapper');
+            if (photoWrap) {
+                photoWrap.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // Find matching gallery index or open dedicated modal
+                    const galleryMatch = (cfg.gallery || []).findIndex(g => g.src === item.image);
+                    if (galleryMatch !== -1) {
+                        openLightbox(galleryMatch);
+                    } else {
+                        openCustomLightbox(item.image, item.title, item.date, item.description);
+                    }
+                });
+            }
+
             timelineContainer.appendChild(el);
         });
     }
@@ -582,6 +652,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalTag.textContent = item.preview || 'Open When...';
                 modalTitle.textContent = item.title;
                 modalLetterText.textContent = item.letter;
+
+                const photoStamp = document.getElementById('openWhenPhotoStamp');
+                const stampImg = document.getElementById('openWhenStampImg');
+                const stampCaption = document.getElementById('openWhenStampCaption');
+
+                if (photoStamp && stampImg) {
+                    if (item.photo) {
+                        stampImg.src = item.photo;
+                        if (stampCaption) stampCaption.textContent = item.title;
+                        photoStamp.style.display = 'block';
+                    } else {
+                        photoStamp.style.display = 'none';
+                    }
+                }
+
                 openWhenModal.classList.add('is-active');
             });
             openWhenGrid.appendChild(card);
@@ -598,10 +683,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // 12. Polaroid Lightbox Modal for Memories
     // =========================================
-    const galleryItems = cfg.gallery || [
-        { src: "assets/images/photo4.jpg", title: "Late Night Talks", date: "Endless Whispers", caption: "Those endless conversations that made us forget about time..." },
-        { src: "assets/images/photo5.jpg", title: "The Day We Meet", date: "Our Destined Day", caption: "I know the day we meet will be magical and unforgettable..." },
-        { src: "assets/images/photo1.jpg", title: "Your Care & Voice", date: "Sweetest Melody", caption: "Your caring nature melts my heart every single day..." }
+    const galleryItems = cfg.gallery && cfg.gallery.length > 0 ? cfg.gallery : [
+        { src: "assets/images/couple-night-water.jpg", title: "By the Still Waters", date: "Magical Evening", caption: "Standing beside you, looking out over the water...", icon: "✨", category: "together" }
     ];
 
     let currentGalleryIdx = 0;
@@ -629,14 +712,20 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxModal.classList.add('is-active');
     }
 
+    function openCustomLightbox(src, title, date, caption) {
+        playSound(clickSound);
+        lightboxImg.src = src;
+        lightboxTitle.textContent = title;
+        lightboxDate.textContent = date;
+        lightboxCaption.textContent = caption;
+        lightboxCount.textContent = `✦ Featured`;
+        lightboxModal.classList.add('is-active');
+    }
+
     function closeLightbox() {
         playSound(clickSound);
         lightboxModal.classList.remove('is-active');
     }
-
-    document.querySelectorAll('.editorial-memory-card').forEach((card, idx) => {
-        card.addEventListener('click', () => openLightbox(idx));
-    });
 
     if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
@@ -659,11 +748,108 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') {
             closeLightbox();
             closeOpenWhen();
-        } else if (lightboxModal.classList.contains('is-active')) {
+        } else if (lightboxModal && lightboxModal.classList.contains('is-active')) {
             if (e.key === 'ArrowLeft') openLightbox(currentGalleryIdx - 1);
             if (e.key === 'ArrowRight') openLightbox(currentGalleryIdx + 1);
         }
     });
+
+    // Dynamic Memories Gallery Grid Generation with Category Filtering
+    const memoriesGrid = document.getElementById('memoriesGrid');
+    const galleryFilters = document.getElementById('galleryFilters');
+    let activeFilter = 'all';
+
+    function renderMemoriesGrid() {
+        if (!memoriesGrid) return;
+        memoriesGrid.innerHTML = '';
+
+        const filtered = galleryItems.filter(item => {
+            if (activeFilter === 'all') return true;
+            return item.category === activeFilter;
+        });
+
+        filtered.forEach((item, fIdx) => {
+            const originalIdx = galleryItems.indexOf(item);
+            const card = document.createElement('div');
+            card.className = `editorial-memory-card hover-trigger ${fIdx % 2 === 1 ? 'offset-card' : ''}`;
+            card.setAttribute('data-gallery-idx', originalIdx);
+
+            card.innerHTML = `
+                <div class="memory-pin">📍</div>
+                <div class="memory-image-container">
+                    <img src="${item.src}" alt="${item.title}" loading="lazy">
+                    <div class="glare"></div>
+                </div>
+                <div class="memory-card-body">
+                    <div class="memory-header-meta">
+                        <span class="memory-icon">${item.icon || '✨'}</span>
+                        <span class="memory-date-tag">${item.date || ''}</span>
+                    </div>
+                    <h3 class="memory-card-title">${item.title}</h3>
+                    <p class="memory-card-caption">${item.caption}</p>
+                    <div class="memory-expand-hint">View Polaroid 🔍</div>
+                </div>
+            `;
+
+            card.addEventListener('click', () => {
+                openLightbox(originalIdx);
+            });
+
+            memoriesGrid.appendChild(card);
+        });
+
+        // Re-attach hover glare effects to newly rendered cards
+        document.querySelectorAll('.editorial-memory-card').forEach(card => {
+            const glare = card.querySelector('.glare');
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--glare-x', `${x}%`);
+                card.style.setProperty('--glare-y', `${y}%`);
+                if (glare) glare.style.opacity = '1';
+            });
+            card.addEventListener('mouseleave', () => {
+                if (glare) glare.style.opacity = '0';
+            });
+        });
+    }
+
+    renderMemoriesGrid();
+
+    // Gallery Filter Button Listeners
+    if (galleryFilters) {
+        const filterBtns = galleryFilters.querySelectorAll('.gallery-filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('active')) return;
+                playSound(clickSound);
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeFilter = btn.getAttribute('data-filter') || 'all';
+
+                if (typeof gsap !== 'undefined') {
+                    gsap.to(memoriesGrid, {
+                        opacity: 0,
+                        y: 15,
+                        duration: 0.2,
+                        ease: 'power2.in',
+                        onComplete: () => {
+                            renderMemoriesGrid();
+                            gsap.to(memoriesGrid, {
+                                opacity: 1,
+                                y: 0,
+                                duration: 0.35,
+                                ease: 'power2.out'
+                            });
+                        }
+                    });
+                } else {
+                    renderMemoriesGrid();
+                }
+            });
+        });
+    }
 
     // Touch Swipe Gesture for Lightbox on Mobile Phones
     if (lightboxModal) {
