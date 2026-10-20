@@ -352,6 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggleLetter(open) {
         playSound(clickSound);
+        if (navigator.vibrate) navigator.vibrate(25);
         if (open) {
             waxEnvelope.classList.add('is-open');
             if (loveButton) loveButton.textContent = "Close Letter ✉️";
@@ -366,6 +367,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     origin: { y: 0.6 },
                     colors: ['#E5C07B', '#FFC0CB', '#FFFFFF']
                 });
+            }
+            // Mobile: automatically scroll so the unfolded letter is immediately visible
+            if (window.innerWidth <= 900) {
+                setTimeout(() => {
+                    const letterParchment = document.getElementById('unfoldedLetter');
+                    if (letterParchment) letterParchment.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 350);
             }
         } else {
             waxEnvelope.classList.remove('is-open');
@@ -512,6 +520,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Touch Swipe Gesture for Reasons Deck on Mobile Phones
+    const reasonsDeck = document.getElementById('reasonsDeck');
+    if (reasonsDeck) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+        reasonsDeck.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        reasonsDeck.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+
+            // Horizontal swipe detected with greater magnitude than vertical scroll
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+                if (diffX < 0) {
+                    // Swiped Left -> Next Reason
+                    playSound(clickSound);
+                    if (navigator.vibrate) navigator.vibrate(15);
+                    renderReason(currentReasonIdx + 1, 1);
+                } else {
+                    // Swiped Right -> Previous Reason
+                    playSound(clickSound);
+                    if (navigator.vibrate) navigator.vibrate(15);
+                    renderReason(currentReasonIdx - 1, -1);
+                }
+            }
+        }, { passive: true });
+    }
+
     // =========================================
     // 11. "Open When..." Letters Grid & Modal
     // =========================================
@@ -624,6 +665,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Touch Swipe Gesture for Lightbox on Mobile Phones
+    if (lightboxModal) {
+        let lbTouchStartX = 0;
+        let lbTouchStartY = 0;
+        lightboxModal.addEventListener('touchstart', (e) => {
+            lbTouchStartX = e.changedTouches[0].screenX;
+            lbTouchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        lightboxModal.addEventListener('touchend', (e) => {
+            const lbTouchEndX = e.changedTouches[0].screenX;
+            const lbTouchEndY = e.changedTouches[0].screenY;
+            const diffX = lbTouchEndX - lbTouchStartX;
+            const diffY = lbTouchEndY - lbTouchStartY;
+
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 45) {
+                if (diffX < 0) openLightbox(currentGalleryIdx + 1);
+                else openLightbox(currentGalleryIdx - 1);
+            } else if (diffY > 80 && Math.abs(diffX) < 40) {
+                // Swiped down to dismiss
+                closeLightbox();
+            }
+        }, { passive: true });
+    }
+
     // =========================================
     // 13. Virtual Kiss Cannon & Milestone Engine
     // =========================================
@@ -645,6 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function triggerKiss(e, isShower = false) {
         playSound(clickSound);
+        if (navigator.vibrate) navigator.vibrate(isShower ? [15, 30, 15] : 15);
         const kissesAdded = isShower ? 5 : 1;
         kissCount += kissesAdded;
         kissCountDisplay.textContent = kissCount;
@@ -731,6 +798,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stampBtn.classList.add('is-sealed');
             stampLabel.textContent = "SEALED";
             stampIcon.textContent = "💍";
+            if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
             showToast("✦ Our eternal love is officially sealed in the stars! ✦");
 
             if (typeof confetti === 'function') {
@@ -808,6 +876,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cursorOutline) cursorOutline.classList.remove('hovering');
         });
     });
+
+    // Ambient Screen Tap Floating Hearts on Mobile Devices
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        document.addEventListener('touchstart', (e) => {
+            if (!e.target.closest('button, a, input, .magnetic-btn, .wax-seal, .open-when-card, .editorial-memory-card, .time-card, .dock-item, .stamp-btn')) {
+                const touch = e.touches[0];
+                if (window.spawnHearts) {
+                    window.spawnHearts(touch.clientX, touch.clientY, 3, Math.random() > 0.5 ? '✨' : '💕');
+                }
+            }
+        }, { passive: true });
+    }
 
     // 3D Glare Parallax on Artifacts
     document.querySelectorAll('.magical-artifact, .hero-arch').forEach(card => {
