@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node -e \"const fs=require('fs'); fs.copyFileSync('config.js','dist/config.js'); fs.cpSync('assets','dist/assets',{recursive:true});\"",
     "preview": "vite preview",
     "serve": "python -m http.server 8000"
   },
@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/yourusername/love-website-generator#readme",
   "devDependencies": {
-    "vite": "^5.4.2"
+    "vite": "^6.0.0"
   }
 }
