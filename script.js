@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     const cfg = window.CONFIG || {};
     const messages = cfg.messages || {};
-    const partnerName = cfg.partnerName || "Rana";
-    const yourName = cfg.yourName || "Mahmoud";
-    const nickname = cfg.nickname || "Rony";
+    const partnerName = cfg.partnerName || "Habiba";
+    const yourName = cfg.yourName || "Ahmed";
+    const nickname = cfg.nickname || partnerName;
 
     // Text Injections
     const setText = (id, text) => {
@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     setText('preloaderName', partnerName);
+    document.title = `For My Love 💕 | ${yourName} & ${partnerName}`;
+    document.querySelectorAll('[data-couple-monogram]').forEach(el => {
+        el.textContent = `${yourName.charAt(0)} ♡ ${partnerName.charAt(0)}`;
+    });
     setText('subtitle', messages.subtitle);
     setText('partnerName', partnerName);
     setText('yourName', yourName);
@@ -25,6 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
     setText('specialMessage1', messages.specialMessage);
     setText('specialMessage2', messages.specialMessage2);
     setText('signature', messages.signature);
+    setText('envelopeTo', `For: ${partnerName} (My Dearest ${nickname})`);
+    setText('letterTitle', `My Sweetest ${nickname},`);
+    setText('letterSignature', `${yourName} 💕`);
+    setText('certYourName', yourName);
+    setText('certYourSignature', yourName);
+    setText('certPartnerName', partnerName);
+    setText('certPartnerSignature', partnerName);
+    setText('modalYourName', `${yourName} 💖`);
     setText('heroBadgeText', `${yourName.toUpperCase()} & ${partnerName.toUpperCase()} • ETERNAL DEVOTION`);
 
     if (cfg.music) {
@@ -323,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // 6. Live "Time Spent Loving You" Heartbeat Clock
     // =========================================
-    const startDate = new Date(cfg.startDate || "2026-01-23T00:00:00");
+    const startDate = new Date(cfg.startDate || "2024-10-09T00:00:00");
     const elDays = document.getElementById('timeDays');
     const elHours = document.getElementById('timeHours');
     const elMinutes = document.getElementById('timeMinutes');
@@ -346,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elSeconds) elSeconds.textContent = String(seconds).padStart(2, '0');
 
         if (elTotalText) {
-            elTotalText.textContent = `Over ${days.toLocaleString()} days (~9 beautiful months) of endless smiles, laughs, and pure love ✨`;
+            elTotalText.textContent = `${days.toLocaleString()} ${days === 1 ? 'day' : 'days'} of ${yourName} & ${partnerName}, since October 9, 2024 ✨`;
         }
     }
     updateLoveClock();
@@ -356,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Morphing Decode Title
     // =========================================
     const morphText = document.getElementById('morphText');
-    const words = ["LOVE", nickname.toUpperCase() || "RONY", "MY ANGEL", "SOULMATE"];
+    const words = ["LOVE", nickname.toUpperCase(), "MY ANGEL", "SOULMATE"];
     const charsList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*✦";
     let wordIndex = 0;
 
@@ -375,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (iteration >= targetWord.length) {
                 clearInterval(scrambleInterval);
                 morphText.innerText = targetWord;
-                if (targetWord === nickname.toUpperCase() || targetWord === "RONY") {
+                if (targetWord === nickname.toUpperCase()) {
                     morphText.classList.add('morph-halo');
                 }
                 wordIndex = (wordIndex + 1) % words.length;
@@ -684,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 12. Polaroid Lightbox Modal for Memories
     // =========================================
     const galleryItems = cfg.gallery && cfg.gallery.length > 0 ? cfg.gallery : [
-        { src: "assets/images/couple-night-water.jpg", title: "By the Still Waters", date: "Magical Evening", caption: "Standing beside you, looking out over the water...", icon: "✨", category: "together" }
+        { src: "assets/images/couple-night-water.jpg", title: "A Moment to Remember", date: "A Moment Together", caption: "A little space for a favorite photo of us.", icon: "✨", category: "together" }
     ];
 
     let currentGalleryIdx = 0;
@@ -888,11 +900,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const milestones = [10, 25, 50, 75, 100];
     const romanticMilestoneMsgs = cfg.kissMessages || {
-        10: "10 kisses! You're so sweet, MyR! 💕",
+        10: `10 kisses! You're so sweet, ${partnerName}! 💕`,
         25: "25 kisses! My heart is racing for you! 💖",
         50: "50 kisses! I'm falling deeper in love! 💘",
         75: "75 kisses! Can't wait to kiss you in real life! 💋",
-        100: "100 kisses! You're my everything, Rony! 💍✨"
+        100: `100 kisses! You're my everything, ${partnerName}! 💍✨`
     };
 
     function triggerKiss(e, isShower = false) {

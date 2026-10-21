@@ -1,40 +1,40 @@
 // Love Website Configuration
-// Personalized for Rana (Rony/MyR) from Mahmoud
+// Personalized for Habiba from Ahmed
 
 const CONFIG = {
     // Partner's name & Pet name
-    partnerName: "Rana",
-    nickname: "Rony",
-    petName: "MyR",
+    partnerName: "Habiba",
+    nickname: "Biba",
+    petName: "Biba",
     
     // Your name
-    yourName: "Mahmoud",
+    yourName: "Ahmed",
     
     // Relationship start date (for the live "Time Loving You" clock)
-    // Starting from January 23, 2026 (23/1/2026) (~9 months)
-    startDate: "2026-01-23T00:00:00",
+    // Relationship began October 9, 2024. The clock measures elapsed local time from midnight.
+    startDate: "2024-10-09T00:00:00",
     
     // Music Information
     music: {
         title: "Our Eternal Melody",
-        artist: "Mahmoud & Rana 💕",
+        artist: "Ahmed & Habiba 💕",
         src: "assets/audio/bgm.mp3"
     },
     
     // Custom messages
     messages: {
-        subtitle: "You light up my world in ways words can't express ✨",
-        loveNote: "Rony, you are the sunshine in my darkest days and the stars in my night sky. Every moment with you feels like magic, and I fall in love with you more each day. You're not just my partner, you're my best friend, my soulmate, and my everything. I love you beyond words! 💖",
-        specialMessage: "You came into my life like a beautiful surprise, and now I can't imagine my world without you. Your smile brightens my darkest days, your laugh is my favorite melody, and your love is the greatest gift I've ever received.",
-        specialMessage2: "Thank you for being you, for loving me, and for making every day feel like a celebration. I promise to love you, cherish you, and make you smile every single day of our lives together.",
-        signature: "With all my love, Forever yours, Mahmoud 💕"
+        subtitle: "Biba, every day with you is another reason to be grateful for us ✨",
+        loveNote: "Biba, since October 9, 2024, my favorite part of life has been getting to love you. You bring warmth to ordinary days and make the little moments feel worth keeping. I am grateful for your heart, your presence, and the story we are writing together. I love you, always. 💖",
+        specialMessage: "Habiba, you make my world softer, brighter, and more beautiful simply by being in it. I love the person you are and the way life feels with you beside me.",
+        specialMessage2: "Thank you for every moment, every smile, and all the care you bring into my life. I will keep choosing you, cherishing you, and looking forward to everything still ahead of us.",
+        signature: "With all my love, Ahmed 💕"
     },
     
     // Memory descriptions (backward compatibility)
     memories: {
-        lateNight: "Those endless conversations that made us forget about time",
-        firstMeeting: "I know the day we meet will be magical and unforgettable",
-        care: "Your caring nature, sweet voice, and adorable cuteness"
+        lateNight: "Every quiet moment we share is one I am grateful for",
+        firstMeeting: "October 9, 2024 will always be the beginning of our story",
+        care: "Habiba, you make my heart feel full. I love you more each day."
     },
     
     // Character / Avatar descriptions
@@ -46,49 +46,49 @@ const CONFIG = {
     // Interactive Relationship Timeline
     timeline: [
         {
-            date: "The First Hello",
+            date: "October 9, 2024",
             tag: "Chapter I",
-            title: "When Two Worlds Aligned",
-            description: "A simple hello that unknowingly set into motion the greatest love story of my life. Like a bouquet of fresh white roses, you brought pure light into my world.",
+            title: "The Day Our Story Began",
+            description: "The beginning of us. Since this day, every chapter has been another chance to know you more, care for you more, and build something beautiful together.",
             icon: "✨",
             image: "assets/images/rana-roses.jpg",
-            imageCaption: "White roses blooming like my love for you"
+            imageCaption: "A little reminder of the day our story began"
         },
         {
-            date: "Late Night Talks",
+            date: "All the Little Moments",
             tag: "Chapter II",
-            title: "Hours That Felt Like Minutes",
-            description: "Talking past 1 AM, laughing at silly things, sharing our secrets, and realizing that no matter how late it got, I never wanted to hang up.",
+            title: "The Moments That Stay",
+            description: "The small conversations, shared smiles, and everyday kindness are the details I treasure most. They remind me that love is found in the little things, too.",
             icon: "🌙",
             image: "assets/images/rana-late-night.jpg",
-            imageCaption: "1:17 AM whispers and sweetest smiles"
+            imageCaption: "A quiet moment worth remembering"
         },
         {
-            date: "The Moment I Knew",
+            date: "A Love Still Growing",
             tag: "Chapter III",
-            title: "My Heart Chose You",
-            description: "It wasn't a sudden storm; it was the quiet realization that every thought, every dream, and every tomorrow belongs with you, Rony.",
+            title: "Getting to Know You",
+            description: "Loving you is something I keep discovering in new ways. I am thankful for who you are and for the chance to keep growing closer, one day at a time.",
             icon: "💖",
             image: "assets/images/couple-mirror-adoration.jpg",
-            imageCaption: "The way I look at you says everything"
+            imageCaption: "A reminder of what makes our story special"
         },
         {
-            date: "Under The Night Sky",
+            date: "Choosing Each Other",
             tag: "Chapter IV",
-            title: "Reflections Under the Stars",
-            description: "Wrapping my arms around you in the quiet evening, feeling your head rest softly against my chest. In that sacred moment, I found my eternal home.",
+            title: "Building Something Beautiful",
+            description: "Whatever the day brings, the thought of facing life as a team makes the future feel brighter. You are someone I want beside me through every season.",
             icon: "💫",
             image: "assets/images/couple-street-mirror.jpg",
-            imageCaption: "Our hearts beating as one under the stars"
+            imageCaption: "Side by side, one day at a time"
         },
         {
-            date: "Forever & Always",
+            date: "All Our Tomorrows",
             tag: "Infinity",
             title: "To Every Tomorrow",
-            description: "Standing tall together through every season, conquering every storm, and loving you deeper with every passing breath for all of eternity.",
+            description: "Here is to everything still ahead: more memories, more laughter, and a love we keep choosing with every new day.",
             icon: "♾️",
             image: "assets/images/couple-night-water.jpg",
-            imageCaption: "Hand in hand, into forever"
+            imageCaption: "To every lovely chapter still ahead"
         }
     ],
 
@@ -96,74 +96,74 @@ const CONFIG = {
     reasons: [
         {
             id: 1,
-            title: "Your Sweet Laugh",
-            text: "The way you laugh makes my darkest day immediately brighten. It is my favorite melody in the entire universe.",
+            title: "The Joy You Bring",
+            text: "Life feels brighter with you in it. I love all the ways, big and small, that you make an ordinary day feel special.",
             icon: "🌸"
         },
         {
             id: 2,
-            title: "Your Caring Heart",
-            text: "You care so genuinely and deeply. The gentleness in your soul makes me want to be the best version of myself.",
+            title: "The Person You Are",
+            text: "There is so much to admire about you, Habiba. I feel lucky to keep discovering the many things that make you wonderfully you.",
             icon: "🤍"
         },
         {
             id: 3,
-            title: "The Sound of Your Voice",
-            text: "Even through a million miles, hearing you talk brings an instant calm to my heart that nothing else can.",
+            title: "Every Conversation",
+            text: "I could never take for granted the chance to talk, listen, and share a little piece of the day with you.",
             icon: "🎙️"
         },
         {
             id: 4,
-            title: "How Cute You Are When You're Shy",
-            text: "The little ways you get bashful and smile softly make my heart flutter like it's the very first day.",
+            title: "Your One-of-a-Kind Way",
+            text: "There is only one Habiba, and that is exactly who I want to keep learning, laughing, and growing alongside.",
             icon: "🎀"
         },
         {
             id: 5,
-            title: "Your Unmatched Beauty",
-            text: "Inside and out, you are pure art. Looking at you makes me wonder how I got so incredibly lucky in this lifetime.",
+            title: "Everything About You",
+            text: "I love the whole person you are, and I hope you never forget how deeply appreciated and adored you are.",
             icon: "👑"
         },
         {
             id: 6,
-            title: "You Are My Safe Haven",
-            text: "No matter how chaotic the world gets outside, talking with you feels like wrapping myself in warm sunlight.",
+            title: "The Comfort of Us",
+            text: "When life gets busy, remembering that we have each other brings a little extra comfort to my heart.",
             icon: "🏡"
         },
         {
             id: 7,
-            title: "Your Adorable Pouts",
-            text: "Even when you pretend to be mad or make that cute pouty face, all I want to do is shower you with infinite hugs.",
+            title: "A Thousand Little Reasons",
+            text: "Some reasons are easy to put into words; others are simply the feeling I get when I think of you and smile.",
             icon: "🥺"
         },
         {
             id: 8,
-            title: "Our Silly Inside Jokes",
-            text: "We can share a glance or a word and burst out laughing when nobody else understands. You are my best friend.",
+            title: "The Memories We Make",
+            text: "Every moment we share becomes part of a story I am grateful to have with you. I cannot wait to make many more.",
             icon: "✨"
         },
         {
             id: 9,
-            title: "Your Support & Faith in Me",
-            text: "When I doubt myself, your belief gives me wings. Having you in my corner is my greatest superpower.",
+            title: "Having You Beside Me",
+            text: "Knowing I get to share this life with you means more to me than I can say. I will keep showing up for us.",
             icon: "🛡️"
         },
         {
             id: 10,
-            title: "The Warmth in Your Words",
-            text: "The sweet morning texts and sleepy goodnight whispers that anchor my days and give me sweet dreams.",
+            title: "The Little Things",
+            text: "A message, a thought, a moment shared: the smallest things can carry so much love when they come from you.",
             icon: "💌"
         },
         {
             id: 11,
-            title: "The Future We Dream Of",
-            text: "Thinking about our future home, our trips, our adventures, and growing old holding your hand excites my soul.",
+            title: "Everything Still Ahead",
+            text: "I look forward to the memories we have not made yet and to every new day that brings another chapter of us.",
             icon: "🌅"
         },
         {
             id: 12,
             title: "Simply Because You Are You",
-            text: "I don't just love things about you; I love the entire soul that is Rana. You are my once-in-a-lifetime miracle.",
+            text: "I love you for all that you are, Habiba. There is no one else I would rather keep building this story with.",
             icon: "♾️"
         }
     ],
@@ -176,7 +176,7 @@ const CONFIG = {
             preview: "Open When...",
             title: "You Miss Me",
             photo: "assets/images/couple-street-mirror.jpg",
-            letter: "My sweet Rony,\n\nClose your eyes for a moment. Take a deep breath and place your hand on your heart. Can you feel that steady beat? That is me thinking of you right now. Distance may keep us apart physically for now, but my heart is permanently with you. I am counting down every second until I can hold your hand, hug you tight, and never let go. You are always on my mind, my angel."
+            letter: "My sweet Biba,\n\nIf you miss me, take a breath and remember how much you mean to me. Even in the middle of a busy day, there is always a part of my heart thinking of you. I am grateful for every moment we share, and I look forward to all the moments still waiting for us. You are loved, always."
         },
         {
             id: "sleep",
@@ -184,7 +184,7 @@ const CONFIG = {
             preview: "Open When...",
             title: "You Can't Sleep",
             photo: "assets/images/rana-late-night.jpg",
-            letter: "Dearest Rana,\n\nLook up at the moon tonight. It's the exact same moon looking down on both of us. Imagine my arms wrapped softly around you, pulling you close, whispering that everything is alright. Let go of all the worries of today. Dream of our happiest memories and our beautiful future. Sleep peacefully, my love. I will meet you in our dreams."
+            letter: "Dearest Biba,\n\nLet the day come to a gentle close. You have done enough, and you deserve to rest. I hope you fall asleep feeling safe, appreciated, and surrounded by all my love. May tomorrow bring you peace and a reason to smile. Good night, my love."
         },
         {
             id: "stressed",
@@ -192,7 +192,7 @@ const CONFIG = {
             preview: "Open When...",
             title: "You Feel Stressed or Sad",
             photo: "assets/images/rana-roses.jpg",
-            letter: "My precious MyR,\n\nTake a slow, deep breath. Whatever is weighing heavy on your shoulders right now, remember that you are never alone. I am here with you through every storm. You are stronger, braver, and more capable than you know. Don't be too hard on yourself. Sip some warm tea, wrap yourself in a soft blanket, and know that your Mahmoud loves you unconditionally."
+            letter: "My precious Biba,\n\nTake a slow breath and give yourself the kindness you give everyone else. You do not have to solve everything at once. I believe in you, I am proud of you, and I am here whenever you need me. Be gentle with yourself today. I love you."
         },
         {
             id: "doubt",
@@ -209,121 +209,121 @@ const CONFIG = {
         {
             id: 1,
             src: "assets/images/couple-night-water.jpg",
-            title: "By the Still Waters",
+            title: "A Moment to Remember",
             category: "together",
             categoryLabel: "Us Together 💕",
-            date: "Magical Evening",
-            caption: "Standing beside you, looking out over the water. Wrapped in your love, every step with you feels like walking through a dream I never want to wake from.",
+            date: "A Moment Together",
+            caption: "A little space for a favorite photo of us. I am grateful for the moments we share and the memories still ahead.",
             icon: "✨",
             featured: true
         },
         {
             id: 2,
             src: "assets/images/couple-street-mirror.jpg",
-            title: "Reflections Under the Stars",
+            title: "One for the Memory Wall",
             category: "together",
             categoryLabel: "Us Together 💕",
-            date: "Our Quiet Haven",
-            caption: "Resting your head against my chest under the evening sky. In that moment, the entire world melted away, and all that existed was the beat of our hearts.",
+            date: "Us, together",
+            caption: "Every picture has a story. I cannot wait to fill this wall with more of ours.",
             icon: "🌌",
             featured: true
         },
         {
             id: 3,
             src: "assets/images/rana-portrait.jpg",
-            title: "Royal Radiance in Rose",
-            category: "rana",
-            categoryLabel: "My Queen Rana 👑",
-            date: "My Angel Rony",
-            caption: "Effortlessly enchanting, glowing in silk, with that captivating smile that completely steals my breath away every single time.",
+            title: "My Beautiful Habiba",
+            category: "habiba",
+            categoryLabel: "Habiba 👑",
+            date: "For My Love",
+            caption: "A little frame for the person who makes my days brighter. I am so grateful that I get to call you mine.",
             icon: "👑",
             featured: true
         },
         {
             id: 4,
             src: "assets/images/rana-roses.jpg",
-            title: "White Roses for My Queen",
-            category: "rana",
-            categoryLabel: "My Queen Rana 👑",
+            title: "A Little Love, Just for You",
+            category: "habiba",
+            categoryLabel: "Habiba 👑",
             date: "Pure Romance",
-            caption: "Even a thousand pure white roses could never rival the warmth, elegance, and celestial sweetness of your radiant smile.",
+            caption: "No picture or gift could say it all, but this one carries a simple message: I love you, Habiba.",
             icon: "🌹",
             featured: true
         },
         {
             id: 5,
             src: "assets/images/couple-mirror-adoration.jpg",
-            title: "The Look of Pure Devotion",
+            title: "A Moment Together",
             category: "together",
             categoryLabel: "Us Together 💕",
-            date: "Our Favorite Day",
-            caption: "The way I look at you says everything words never could. You are my greatest joy, my sweetest blessing, and my forever girl.",
+            date: "October 9, 2024 & every day after",
+            caption: "Our story began on October 9, 2024. I am thankful for every day since and excited for all the days still to come.",
             icon: "💖",
             featured: true
         },
         {
             id: 6,
             src: "assets/images/rana-late-night.jpg",
-            title: "1:17 AM Sweet Whispers",
-            category: "rana",
-            categoryLabel: "My Queen Rana 👑",
-            date: "1:17 AM • Late Nights",
-            caption: "When the clock strikes past 1 AM and the entire world is fast asleep, your voice and your smile are the only peace my heart ever seeks.",
+            title: "A Quiet Moment",
+            category: "habiba",
+            categoryLabel: "Habiba 👑",
+            date: "A Moment to Keep",
+            caption: "No matter how full the day gets, a quiet moment to think of you always brings me back to what matters.",
             icon: "🌙",
             featured: true
         },
         {
             id: 7,
             src: "assets/images/mahmoud-portrait.jpg",
-            title: "The Boy Who Fell For You",
-            category: "mahmoud",
-            categoryLabel: "Mahmoud 🛡️",
+            title: "Forever Yours",
+            category: "ahmed",
+            categoryLabel: "Ahmed 🛡️",
             date: "Forever Yours",
-            caption: "A man whose greatest purpose, deepest devotion, and happiest moments will always begin and end with you, Rana.",
+            caption: "Always grateful to be the one who gets to love you, Habiba.",
             icon: "🛡️",
             featured: false
         },
         {
             id: 8,
             src: "assets/images/rana-sunshine.jpg",
-            title: "Sunshine & Soft Curls",
-            category: "rana",
-            categoryLabel: "My Queen Rana 👑",
+            title: "Your Light",
+            category: "habiba",
+            categoryLabel: "Habiba 👑",
             date: "Gentle Morning Warmth",
-            caption: "Your natural glow, soft curls, and that gentle smile that warms my entire heart from miles away.",
+            caption: "Your warmth has a way of making even an ordinary day feel special. I love you for exactly who you are.",
             icon: "☀️",
             featured: false
         },
         {
             id: 9,
             src: "assets/images/rana-adventurer.jpg",
-            title: "My Playful Adventurer",
-            category: "rana",
-            categoryLabel: "My Queen Rana 👑",
+            title: "Your Joy",
+            category: "habiba",
+            categoryLabel: "Habiba 👑",
             date: "Silly & Adorable",
-            caption: "That cute bashful smile and playful spirit that makes me laugh out loud and fall in love with you all over again.",
+            caption: "I love the joy you bring into my life and all the little ways you make me smile.",
             icon: "🎀",
             featured: false
         },
         {
             id: 10,
             src: "assets/images/rana-silk-glance.jpg",
-            title: "Silk & Sweet Serenade",
-            category: "rana",
-            categoryLabel: "My Queen Rana 👑",
+            title: "Your Kind Heart",
+            category: "habiba",
+            categoryLabel: "Habiba 👑",
             date: "Graceful Heart",
-            caption: "Every quiet gesture of yours radiates beauty, elegance, and a gentleness that soothes my entire soul.",
+            caption: "Your kindness is one of the many reasons I feel lucky to have you in my life.",
             icon: "🌸",
             featured: false
         },
         {
             id: 11,
             src: "assets/images/rana-overalls.jpg",
-            title: "Enchanting Gaze",
-            category: "rana",
-            categoryLabel: "My Queen Rana 👑",
+            title: "A Treasure to Keep",
+            category: "habiba",
+            categoryLabel: "Habiba 👑",
             date: "Treasured Moment",
-            caption: "Looking up with those enchanting eyes that completely captured my soul from the very beginning.",
+            caption: "This little memory wall is only the beginning. I cannot wait to fill it with moments that are ours.",
             icon: "💫",
             featured: false
         }
@@ -333,31 +333,31 @@ const CONFIG = {
     certificate: {
         title: "Certificate of Eternal Love",
         subtitle: "Inscribed in the Stars & Sealed by the Heart",
-        statement: "This document certifies that Mahmoud and Rana (Rony) are bound by unconditional love, endless laughter, infinite virtual kisses, and a promise to cherish each other through every chapter of this lifetime and beyond.",
+        statement: "This document celebrates Ahmed and Habiba, whose story began on October 9, 2024, and the care, joy, and devotion they continue to share. May they keep choosing one another through every chapter still to come.",
         date: "Certified for Eternity",
         witness: "The Universe & Stars"
     },
     
     // Special messages for different kiss counts
     kissMessages: {
-        10: "10 kisses! You're so sweet, MyR! 💕",
+        10: "10 kisses! Sending all my love, Biba! 💕",
         25: "25 kisses! My heart is racing for you! 💖",
         50: "50 kisses! I'm falling deeper in love! 💘",
         75: "75 kisses! Can't wait to kiss you in real life! 💋",
-        100: "100 kisses! You're my everything, Rony! 💍✨"
+        100: "100 kisses! You're my favorite person, Biba! 💍✨"
     },
     
     // Character interaction messages
     characterMessages: {
-        partner: "Rana, you're the most beautiful person in the world! 💕",
+        partner: "Biba, you make my world more beautiful! 💕",
         you: "I'm so lucky to have you in my life! 💖"
     },
     
     // Memory effect messages
     memoryMessages: {
-        lateNight: "Those late nights talking with you are my favorite memories 🌙✨",
-        firstMeeting: "I know the day we meet will be magical and unforgettable 💫💕",
-        care: "Your caring nature, sweet voice, and adorable cuteness melt my heart 💕😍"
+        lateNight: "Every quiet moment we share is one I am grateful for 🌙✨",
+        firstMeeting: "October 9, 2024 will always be the beginning of our story 💫💕",
+        care: "Biba, you make my heart feel full. I love you more each day 💕😍"
     }
 };
 

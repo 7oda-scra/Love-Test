@@ -12,7 +12,7 @@ An ultra-luxury, deeply romantic, couture-grade tribute website generator for co
 
 ### 🎵 Deluxe Floating Audio Experience
 - **Interactive Equalizer Visualizer**: Real-time oscillating sound wave bars that bounce dynamically while music plays.
-- **Track Information Badge**: Displays song title and personalized artist tag (`Mahmoud & Rana 💕`).
+- **Track Information Badge**: Displays the song title and Ahmed & Habiba artist tag.
 - **One-Touch Mute & Volume Slider**: Smooth slider control with volume hover expansion and ambient sound effects.
 
 ### ⏳ "Time Spent Loving You" Live Heartbeat Clock
@@ -20,11 +20,11 @@ An ultra-luxury, deeply romantic, couture-grade tribute website generator for co
 - **Pulsing Heartbeat**: Smooth 72bpm rhythmic heart thump with total days count.
 
 ### 💌 Interactive 3D Wax Seal Envelope
-- **Authentic Wax Seal**: Golden monogram seal stamped with `M ♡ R`.
+- **Authentic Wax Seal**: Golden monogram seal stamped with `A ♡ H`.
 - **Breaking Seal Animation**: Clicking breaks the seal, flips open the envelope, and smoothly unfolds an archival parchment letter with cursive calligraphy and gold foil borders.
 
 ### 📖 "Our Love Journey" Celestial Timeline
-- **Milestone Chapters**: Vertical stellar timeline highlighting key moments (`The First Hello`, `Late Night Talks`, `The Moment I Knew`, `Our Dream Ahead`, `To Every Tomorrow`).
+- **Milestone Chapters**: Vertical stellar timeline beginning on October 9, 2024, and celebrating the story Ahmed and Habiba are writing together.
 - **Scroll-Triggered Reveals**: Glowing celestial nodes with dates, chapter tags, and heartfelt reflections.
 
 ### 🃏 "Reasons Why I Love You" Interactive 3D Card Deck
@@ -84,20 +84,20 @@ All content, names, dates, letters, reasons, and timeline milestones are 100% co
 ```javascript
 const CONFIG = {
     // Partner's Name & Nickname
-    partnerName: "Rana",
-    nickname: "Rony",
-    petName: "MyR",
+    partnerName: "Habiba",
+    nickname: "Biba",
+    petName: "Biba",
     
     // Your Name
-    yourName: "Mahmoud",
+    yourName: "Ahmed",
     
-    // Love Clock Start Date (YYYY-MM-DD)
-    startDate: "2023-11-01T00:00:00",
+    // Love Clock Start Date (local time, October 9, 2024 at midnight)
+    startDate: "2024-10-09T00:00:00",
     
     // Music Information
     music: {
         title: "Our Eternal Melody",
-        artist: "Mahmoud & Rana 💕",
+        artist: "Ahmed & Habiba 💕",
         src: "assets/audio/bgm.mp3"
     },
     
