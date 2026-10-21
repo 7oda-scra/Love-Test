@@ -51,8 +51,8 @@ const CONFIG = {
             title: "The Day Our Story Began",
             description: "The beginning of us. Since this day, every chapter has been another chance to know you more, care for you more, and build something beautiful together.",
             icon: "✨",
-            image: "assets/images/rana-roses.jpg",
-            imageCaption: "A little reminder of the day our story began"
+            image: "assets/images/ahmed-habiba-full-length-mirror.jpeg",
+            imageCaption: "The first chapter, and every lovely one since"
         },
         {
             date: "All the Little Moments",
@@ -60,8 +60,8 @@ const CONFIG = {
             title: "The Moments That Stay",
             description: "The small conversations, shared smiles, and everyday kindness are the details I treasure most. They remind me that love is found in the little things, too.",
             icon: "🌙",
-            image: "assets/images/rana-late-night.jpg",
-            imageCaption: "A quiet moment worth remembering"
+            image: "assets/images/ahmed-habiba-holding-hands.jpeg",
+            imageCaption: "A small detail that says so much"
         },
         {
             date: "A Love Still Growing",
@@ -69,7 +69,7 @@ const CONFIG = {
             title: "Getting to Know You",
             description: "Loving you is something I keep discovering in new ways. I am thankful for who you are and for the chance to keep growing closer, one day at a time.",
             icon: "💖",
-            image: "assets/images/couple-mirror-adoration.jpg",
+            image: "assets/images/ahmed-habiba-selfie-flames.jpeg",
             imageCaption: "A reminder of what makes our story special"
         },
         {
@@ -78,7 +78,7 @@ const CONFIG = {
             title: "Building Something Beautiful",
             description: "Whatever the day brings, the thought of facing life as a team makes the future feel brighter. You are someone I want beside me through every season.",
             icon: "💫",
-            image: "assets/images/couple-street-mirror.jpg",
+            image: "assets/images/ahmed-habiba-store-mirror.jpeg",
             imageCaption: "Side by side, one day at a time"
         },
         {
@@ -87,7 +87,7 @@ const CONFIG = {
             title: "To Every Tomorrow",
             description: "Here is to everything still ahead: more memories, more laughter, and a love we keep choosing with every new day.",
             icon: "♾️",
-            image: "assets/images/couple-night-water.jpg",
+            image: "assets/images/ahmed-habiba-bow-selfie.jpeg",
             imageCaption: "To every lovely chapter still ahead"
         }
     ],
@@ -175,7 +175,7 @@ const CONFIG = {
             emoji: "💌",
             preview: "Open When...",
             title: "You Miss Me",
-            photo: "assets/images/couple-street-mirror.jpg",
+            photo: "assets/images/ahmed-habiba-holding-hands.jpeg",
             letter: "My sweet Biba,\n\nIf you miss me, take a breath and remember how much you mean to me. Even in the middle of a busy day, there is always a part of my heart thinking of you. I am grateful for every moment we share, and I look forward to all the moments still waiting for us. You are loved, always."
         },
         {
@@ -183,7 +183,7 @@ const CONFIG = {
             emoji: "🌙",
             preview: "Open When...",
             title: "You Can't Sleep",
-            photo: "assets/images/rana-late-night.jpg",
+            photo: "assets/images/ahmed-habiba-full-length-mirror.jpeg",
             letter: "Dearest Biba,\n\nLet the day come to a gentle close. You have done enough, and you deserve to rest. I hope you fall asleep feeling safe, appreciated, and surrounded by all my love. May tomorrow bring you peace and a reason to smile. Good night, my love."
         },
         {
@@ -191,7 +191,7 @@ const CONFIG = {
             emoji: "🌧️",
             preview: "Open When...",
             title: "You Feel Stressed or Sad",
-            photo: "assets/images/rana-roses.jpg",
+            photo: "assets/images/ahmed-habiba-store-mirror.jpeg",
             letter: "My precious Biba,\n\nTake a slow breath and give yourself the kindness you give everyone else. You do not have to solve everything at once. I believe in you, I am proud of you, and I am here whenever you need me. Be gentle with yourself today. I love you."
         },
         {
@@ -199,7 +199,7 @@ const CONFIG = {
             emoji: "💫",
             preview: "Open When...",
             title: "You Need A Reminder of My Love",
-            photo: "assets/images/couple-mirror-adoration.jpg",
+            photo: "assets/images/ahmed-habiba-vibes-selfie.jpeg",
             letter: "To my favorite person in the world,\n\nIf ever the world makes you feel small or you wonder how much you mean to someone: listen to me carefully. You are the most important person in my life. Out of 8 billion people on this planet, my heart chose you without a single hesitation. You are cherished, you are adored, and my love for you will only grow stronger with each passing day. Forever yours."
         }
     ],
@@ -208,32 +208,32 @@ const CONFIG = {
     gallery: [
         {
             id: 1,
-            src: "assets/images/couple-night-water.jpg",
-            title: "A Moment to Remember",
+            src: "assets/images/ahmed-habiba-full-length-mirror.jpeg",
+            title: "The Way We Look at Each Other",
             category: "together",
             categoryLabel: "Us Together 💕",
             date: "A Moment Together",
-            caption: "A little space for a favorite photo of us. I am grateful for the moments we share and the memories still ahead.",
+            caption: "A favorite photo of us, and a reminder of how grateful I am for every moment we share.",
             icon: "✨",
             featured: true
         },
         {
             id: 2,
-            src: "assets/images/couple-street-mirror.jpg",
-            title: "One for the Memory Wall",
+            src: "assets/images/ahmed-habiba-store-mirror.jpeg",
+            title: "A Day Out Together",
             category: "together",
             categoryLabel: "Us Together 💕",
-            date: "Us, together",
-            caption: "Every picture has a story. I cannot wait to fill this wall with more of ours.",
+            date: "Everyday Adventures",
+            caption: "Even a simple day out becomes a favorite when I get to share it with you.",
             icon: "🌌",
             featured: true
         },
         {
             id: 3,
-            src: "assets/images/rana-portrait.jpg",
+            src: "assets/images/ahmed-habiba-bow-selfie.jpeg",
             title: "My Beautiful Habiba",
-            category: "habiba",
-            categoryLabel: "Habiba 👑",
+            category: "together",
+            categoryLabel: "Us Together 💕",
             date: "For My Love",
             caption: "A little frame for the person who makes my days brighter. I am so grateful that I get to call you mine.",
             icon: "👑",
@@ -241,40 +241,40 @@ const CONFIG = {
         },
         {
             id: 4,
-            src: "assets/images/rana-roses.jpg",
-            title: "A Little Love, Just for You",
-            category: "habiba",
-            categoryLabel: "Habiba 👑",
-            date: "Pure Romance",
-            caption: "No picture or gift could say it all, but this one carries a simple message: I love you, Habiba.",
+            src: "assets/images/ahmed-habiba-holding-hands.jpeg",
+            title: "Hands Held, Hearts Full",
+            category: "together",
+            categoryLabel: "Us Together 💕",
+            date: "The Little Things",
+            caption: "A simple moment, a hand in mine, and a hundred reasons I feel lucky to have you.",
             icon: "🌹",
             featured: true
         },
         {
             id: 5,
-            src: "assets/images/couple-mirror-adoration.jpg",
-            title: "A Moment Together",
+            src: "assets/images/ahmed-habiba-selfie-flames.jpeg",
+            title: "Sparks & Smiles",
             category: "together",
             categoryLabel: "Us Together 💕",
-            date: "October 9, 2024 & every day after",
-            caption: "Our story began on October 9, 2024. I am thankful for every day since and excited for all the days still to come.",
+            date: "A Favorite Selfie",
+            caption: "A little extra sparkle, a lot of love, and my favorite person right beside me.",
             icon: "💖",
             featured: true
         },
         {
             id: 6,
-            src: "assets/images/rana-late-night.jpg",
-            title: "A Quiet Moment",
-            category: "habiba",
-            categoryLabel: "Habiba 👑",
+            src: "assets/images/ahmed-habiba-selfie-flames-bw.jpeg",
+            title: "Our Playful Side",
+            category: "together",
+            categoryLabel: "Us Together 💕",
             date: "A Moment to Keep",
-            caption: "No matter how full the day gets, a quiet moment to think of you always brings me back to what matters.",
+            caption: "Some moments are serious, some are silly, and every one with you is worth keeping.",
             icon: "🌙",
             featured: true
         },
         {
             id: 7,
-            src: "assets/images/mahmoud-portrait.jpg",
+            src: "assets/images/ahmed-habiba-full-length-mirror.jpeg",
             title: "Forever Yours",
             category: "ahmed",
             categoryLabel: "Ahmed 🛡️",
@@ -285,29 +285,29 @@ const CONFIG = {
         },
         {
             id: 8,
-            src: "assets/images/rana-sunshine.jpg",
-            title: "Your Light",
-            category: "habiba",
-            categoryLabel: "Habiba 👑",
-            date: "Gentle Morning Warmth",
-            caption: "Your warmth has a way of making even an ordinary day feel special. I love you for exactly who you are.",
+            src: "assets/images/ahmed-habiba-vibes-selfie.jpeg",
+            title: "Just Us, in Our Own World",
+            category: "together",
+            categoryLabel: "Us Together 💕",
+            date: "A Little Vibe",
+            caption: "A playful filter, a close-up, and the person who makes my whole world brighter.",
             icon: "☀️",
             featured: false
         },
         {
             id: 9,
-            src: "assets/images/rana-adventurer.jpg",
-            title: "Your Joy",
-            category: "habiba",
-            categoryLabel: "Habiba 👑",
-            date: "Silly & Adorable",
-            caption: "I love the joy you bring into my life and all the little ways you make me smile.",
+            src: "assets/images/ahmed-habiba-bow-selfie.jpeg",
+            title: "Bows & Big Smiles",
+            category: "together",
+            categoryLabel: "Us Together 💕",
+            date: "A Sweet Selfie",
+            caption: "A little bow-filter magic and a whole lot of affection.",
             icon: "🎀",
             featured: false
         },
         {
             id: 10,
-            src: "assets/images/rana-silk-glance.jpg",
+            src: "assets/images/ahmed-habiba-vibes-selfie.jpeg",
             title: "Your Kind Heart",
             category: "habiba",
             categoryLabel: "Habiba 👑",
@@ -318,7 +318,7 @@ const CONFIG = {
         },
         {
             id: 11,
-            src: "assets/images/rana-overalls.jpg",
+            src: "assets/images/ahmed-habiba-store-mirror.jpeg",
             title: "A Treasure to Keep",
             category: "habiba",
             categoryLabel: "Habiba 👑",

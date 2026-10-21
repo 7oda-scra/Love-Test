@@ -696,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 12. Polaroid Lightbox Modal for Memories
     // =========================================
     const galleryItems = cfg.gallery && cfg.gallery.length > 0 ? cfg.gallery : [
-        { src: "assets/images/couple-night-water.jpg", title: "A Moment to Remember", date: "A Moment Together", caption: "A little space for a favorite photo of us.", icon: "✨", category: "together" }
+        { src: "assets/images/ahmed-habiba-full-length-mirror.jpeg", title: "A Moment to Remember", date: "A Moment Together", caption: "A little space for a favorite photo of us.", icon: "✨", category: "together" }
     ];
 
     let currentGalleryIdx = 0;
